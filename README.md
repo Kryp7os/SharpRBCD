@@ -1,6 +1,9 @@
 # About SharpRBCD
 An executable that streamlines adding the msds-AllowedToActOnBehalfOfOtherIdentity attribute for RBCD attacks. This tool was created as an alternative way of writing to the msDS-AllowedToActOnBehalfOfOtherIdentity without using powershell. After setting the delegation, use Rubeus or impacket-getST to request a silver ticket for the desired resource.
 
+# Compiling Details
+Open project in Visual Studio and 'Build the Solution'
+
 # Technical Details
 ### 1. LDAP Binding and Target Identification
 
