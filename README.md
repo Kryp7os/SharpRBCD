@@ -1,6 +1,7 @@
 # About SharpRBCD
 An executable that streamlines adding the msds-AllowedToActOnBehalfOfOtherIdentity attribute for RBCD attacks. This tool was created as an alternative way of writing to the msDS-AllowedToActOnBehalfOfOtherIdentity without using powershell. After setting the delegation, use Rubeus or impacket-getST to request a silver ticket for the desired resource.
 
+# Technical Details
 ### 1. LDAP Binding and Target Identification
 
 The tool connects to Active Directory over LDAP, typically using Kerberos/Negotiate authentication, which leverages the operator’s current session or provided credentials.
