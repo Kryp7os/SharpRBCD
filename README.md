@@ -5,7 +5,6 @@ An executable that streamlines adding the msds-AllowedToActOnBehalfOfOtherIdenti
 Open project in Visual Studio and 'Build the Solution'
 
 # Usage
-![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
 
 ```
 # View the current value of the msDS-AllowedToActOnBehalfOfOtherIdentity attribute
@@ -16,6 +15,8 @@ SharpRBCD.exe -action write -delegateFrom WK1$ -delegateTo SRV01$ -dc dc.company
 SharpRBCD.exe -action clear -delegateTo SRV01$
 
 ```
+![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
+
 # Command-Line
 ![Screenshot 2025-03-09 011356](https://github.com/user-attachments/assets/9fe897b8-0377-459e-b623-d106fa0e7340)
 # C2 Compatibility
