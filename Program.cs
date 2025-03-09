@@ -1,8 +1,12 @@
-﻿using System;
+using System;
 using System.DirectoryServices.Protocols;
 using System.Net;
 using System.Security.AccessControl;
 using System.Security.Principal;
+
+
+// Author: Mark Pralat @markpralat | @Kryp7os
+// SharpRBCD prepares an object for RBCD by adding the msds-AllowedToActOnBehalfOfOtherIdentity attribute using the current user's identity
 
 class RBCD_SSO
 {
