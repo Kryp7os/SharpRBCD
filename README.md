@@ -4,6 +4,29 @@ An executable that streamlines adding the msds-AllowedToActOnBehalfOfOtherIdenti
 # Compiling Details
 Open project in Visual Studio and 'Build the Solution'
 
+# Usage
+![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
+
+```
+# View the current value of the msDS-AllowedToActOnBehalfOfOtherIdentity attribute
+SharpRBCD.exe -action read -delegateTo SRV01$
+# Setting the delegation
+SharpRBCD.exe -action write -delegateFrom WK1$ -delegateTo SRV01$ -dc dc.company.local
+# Clear the attribute
+SharpRBCD.exe -action clear -delegateTo SRV01$
+
+```
+# Command-Line
+![Screenshot 2025-03-09 011356](https://github.com/user-attachments/assets/9fe897b8-0377-459e-b623-d106fa0e7340)
+# C2 Compatibility
+Fully compatibile with Cobalt Strike's execute-assembly command.
+## Read Attribute
+![Screenshot 2025-03-09 142100](https://github.com/user-attachments/assets/cc628051-4894-4f12-a4ab-8fb125165af6)
+## Write Attribute
+![Screenshot 2025-03-09 142142](https://github.com/user-attachments/assets/e00b2374-836e-4571-9d51-16e111181e9e)
+## Clear Attribute
+![Screenshot 2025-03-09 142202](https://github.com/user-attachments/assets/a51afeae-57ae-4a8f-80dc-042899a831c8)
+
 # Technical Details
 ### 1. LDAP Binding and Target Identification
 
@@ -31,26 +54,3 @@ In other words, they can impersonate privileged accounts (also not marked as sen
 
 In reading mode, the application can simply fetch and parse the existing msDS-AllowedToActOnBehalfOfOtherIdentity value, outputting the current security descriptor as SDDL or Base64.
 In clearing mode, it removes the attribute entirely, reverting the target object to a state with no resource-based delegation rights assigned.
-
-# Usage
-![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
-
-```
-# View the current value of the msDS-AllowedToActOnBehalfOfOtherIdentity attribute
-SharpRBCD.exe -action read -delegateTo SRV01$
-# Setting the delegation
-SharpRBCD.exe -action write -delegateFrom WK1$ -delegateTo SRV01$ -dc dc.company.local
-# Clear the attribute
-SharpRBCD.exe -action clear -delegateTo SRV01$
-
-```
-# Command-Line
-![Screenshot 2025-03-09 011356](https://github.com/user-attachments/assets/9fe897b8-0377-459e-b623-d106fa0e7340)
-# C2 Compatibility
-Fully compatibile with Cobalt Strike's execute-assembly command.
-## Read Attribute
-![Screenshot 2025-03-09 142100](https://github.com/user-attachments/assets/cc628051-4894-4f12-a4ab-8fb125165af6)
-## Write Attribute
-![Screenshot 2025-03-09 142142](https://github.com/user-attachments/assets/e00b2374-836e-4571-9d51-16e111181e9e)
-## Clear Attribute
-![Screenshot 2025-03-09 142202](https://github.com/user-attachments/assets/a51afeae-57ae-4a8f-80dc-042899a831c8)
