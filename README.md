@@ -32,8 +32,11 @@ In clearing mode, it removes the attribute entirely, reverting the target object
 ![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
 
 ```
+# View the current value of the msDS-AllowedToActOnBehalfOfOtherIdentity attribute
 SharpRBCD.exe -action read -delegateTo SRV01$
+# Setting the delegation
 SharpRBCD.exe -action write -delegateFrom WK1$ -delegateTo SRV01$ -dc dc.company.local
+# Clear the attribute
 SharpRBCD.exe -action clear -delegateTo SRV01$
 
 ```
