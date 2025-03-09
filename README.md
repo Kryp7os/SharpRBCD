@@ -20,8 +20,9 @@ Using an LDAP “modify” operation, it replaces the target machine’s msDS-Al
 This effectively grants the specified SID (the “delegate-from” machine) the right to impersonate arbitrary users to the “delegate-to” service.
 ### 5. Abusing Constrained Delegation
 
-With that attribute set, a malicious operator controlling the “delegate-from” computer can use Kerberos protocol transitions (S4U2Self / S4U2Proxy) to request service tickets in the name of any user.
-In other words, they can impersonate privileged accounts (e.g., Domain Admins) to the “delegate-to” service, obtaining “silver tickets” for lateral movement or local privilege escalation.
+With that attribute set, an operator controlling the “delegate-from” computer can use Kerberos protocol transitions (S4U2Self / S4U2Proxy) to request service tickets in the name of any user.
+In other words, they can impersonate privileged accounts (also not marked as sensitive) to the “delegate-to” service, obtaining “silver tickets” for lateral movement or local privilege escalation.
+
 ### 6. Additional Actions (Read / Clear)
 
 In reading mode, the application can simply fetch and parse the existing msDS-AllowedToActOnBehalfOfOtherIdentity value, outputting the current security descriptor as SDDL or Base64.
@@ -30,6 +31,12 @@ In clearing mode, it removes the attribute entirely, reverting the target object
 # Usage
 ![Screenshot 2025-03-09 141549](https://github.com/user-attachments/assets/1a11f7d9-2d2d-4c55-a83e-e1460f8f12d8)
 
+```
+SharpRBCD.exe -action read -delegateTo SRV01$
+SharpRBCD.exe -action write -delegateFrom WK1$ -delegateTo SRV01$ -dc dc.company.local
+SharpRBCD.exe -action clear -delegateTo SRV01$
+
+```
 # Command-Line
 ![Screenshot 2025-03-09 011356](https://github.com/user-attachments/assets/9fe897b8-0377-459e-b623-d106fa0e7340)
 # C2 Compatibility
