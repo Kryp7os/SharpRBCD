@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rbcd", "rbcd.csproj", "{5CFD3C62-5878-4DD4-81C0-E214E975FBF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5CFD3C62-5878-4DD4-81C0-E214E975FBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFD3C62-5878-4DD4-81C0-E214E975FBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFD3C62-5878-4DD4-81C0-E214E975FBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFD3C62-5878-4DD4-81C0-E214E975FBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF891E2C-9FA5-443D-B928-78263AF3AAC9}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SharpRBCD</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Pull in System.DirectoryServices.Protocols from the GAC -->
+    <Reference Include="System.DirectoryServices.Protocols" />
+  </ItemGroup>
+
+</Project>
