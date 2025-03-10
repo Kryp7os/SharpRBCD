@@ -55,3 +55,8 @@ In other words, they can impersonate privileged accounts (also not marked as sen
 
 In reading mode, the application can simply fetch and parse the existing msDS-AllowedToActOnBehalfOfOtherIdentity value, outputting the current security descriptor as SDDL or Base64.
 In clearing mode, it removes the attribute entirely, reverting the target object to a state with no resource-based delegation rights assigned.
+
+# References/Inspiration
+ Impacket-RBCD - https://github.com/fortra/impacket/blob/master/examples/rbcd.py
+ SharpAllowedToAct - https://github.com/pkb1s/SharpAllowedToAct/tree/master
+ StandIn - https://github.com/FuzzySecurity/StandIn
