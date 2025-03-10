@@ -43,14 +43,14 @@ Fully compatibile with Cobalt Strike's execute-assembly command.
 ### 1. LDAP Binding and Target Identification
 
 The tool connects to Active Directory over LDAP, typically using Kerberos/Negotiate authentication, which leverages the operator’s current session or provided credentials.
-It then locates the target computer object (the one on which delegation will be enabled) by searching for its sAMAccountName (e.g., DC-2$).
+It then locates the target computer object (the one on which delegation will be enabled) by searching for its sAMAccountName (e.g., SRV1$).
 ### 2. Retrieving the “Delegate-From” SID
 
-A separate computer account—often attacker-controlled or otherwise vulnerable—is the “delegate-from” host (e.g., WKSTN-2$).
+A separate computer account—often attacker-controlled or otherwise vulnerable—is the “delegate-from” host (e.g., WS01$).
 The application queries AD to find this machine’s objectSid (a binary representation of the SID).
 ### 3. Constructing a Security Descriptor
 
-Once the tool has the SID of the “delegate-from” machine, it builds a Security Descriptor in SDDL form (commonly: O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;<delegateFrom-SID>)).
+Once the tool has the SID of the “delegate-from” machine, it builds a Security Descriptor in SDDL form `(commonly: O:BAD:(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;<delegateFrom-SID>))`.
 This SDDL string grants the “delegate-from” SID the right to perform Kerberos delegation (via S4U2Proxy) on behalf of other users to the “delegate-to” resource.
 ### 4. Writing msDS-AllowedToActOnBehalfOfOtherIdentity
 
