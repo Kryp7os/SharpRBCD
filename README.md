@@ -58,5 +58,7 @@ In clearing mode, it removes the attribute entirely, reverting the target object
 
 # References/Inspiration
  Impacket-RBCD - https://github.com/fortra/impacket/blob/master/examples/rbcd.py
+ 
  SharpAllowedToAct - https://github.com/pkb1s/SharpAllowedToAct/tree/master
+ 
  StandIn - https://github.com/FuzzySecurity/StandIn
