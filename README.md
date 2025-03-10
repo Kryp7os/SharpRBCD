@@ -5,6 +5,13 @@ This tool was created as an alternative way of writing to the msDS-AllowedToActO
 
 After setting the delegation, use Rubeus or impacket-getST to request a silver ticket for the desired resource.
 
+# Authentication
+
+The application uses the current process context for its LDAP authentication. Since the code only does a Negotiate (Kerberos/NTLM) bind with no explicit credential parameters, it leverages whatever account is running the process.
+
+The tool will authenticate to LDAP as whatever security principal is running the process. No credentials are passed in manually. That means if you want to use another domain user’s privileges (because that user has the necessary write access to set RBCD), you can simply run the tool under that user’s session (e.g., token impersonation, pass-the-ticket, or `runas`). And if you run it under `SYSTEM`, it will try to bind as the machine account in AD.
+
+
 # Compiling Details
 Open project in Visual Studio and 'Build the Solution'
 
